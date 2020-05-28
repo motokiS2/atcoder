@@ -1,0 +1,2 @@
+優先度付きキュー	PowerfulDiscountTicketsPQ.php
+最大公約数、素因数分解	DisjointSetofCommonDivisors.php

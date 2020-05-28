@@ -1,0 +1,39 @@
+B
+1-Nまでの和を求める関数sum
+sum(n):
+	return n*(n+1)/2 
+
+を使用するとO(1)で計算できる
+ans = sum(N) - sum(N / 3)*3 - sum(N / 5)*5 + sum(N / 15)*15
+
+
+C
+最大公約数を求める関数gcd
+from math import gcd
+
+3つの数(a,b,c)の最大公約数は
+gcd(a, gcd(b, c))にて求めることができる
+
+gcd関数をインポートする際
+from math import gcd
+	gcd(a, gcd(b, c))
+のほうが
+import math
+	math.gcd(a, math.gcd(b, c))
+
+前者のほうが実行時間が短くなる（なぜ
+
+自分は後者でインポートしていたので
+for i range(1, N+1):
+	for j range(1, N+1):
+		for k range(1, N+1):
+			ans += math.gcd(a, math.gcd(b, c))
+ではTLEになってしまった
+
+工夫点
+gcd(x, y, z)とgcd(x, z, y)は同じなので
+j,kに関して対象になるようにfor文を組んだ（コード参照）
+j=kの際はgcd(i, j, k) = gcd(i, j)で求まる
+
+
+D
